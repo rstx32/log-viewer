@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3 id="logUpdate"></h3>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io()
+
+      socket.on('log-update', (msg) => {
+        console.log(msg)
+        document.getElementById('logUpdate').innerHTML = msg
+      })
+    </script>
+  </body>
+</html>
